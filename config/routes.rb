@@ -1,5 +1,9 @@
 Authing::Application.routes.draw do
-  match '/auth/:provider/callback', to: 'sessions#create'
+  resources :authentications
+
+  devise_for :users
+
+  match '/users/auth/:provider/callback' => 'authentications#create'
 
   root :to => 'application#index'
 end

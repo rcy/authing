@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authing</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= yield %>
+
+    <%= link_to "twit", omniauth_authorize_path('resource', :twitter) %>
+
+  </body>
+</html>
